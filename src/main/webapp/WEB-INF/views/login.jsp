@@ -12,17 +12,17 @@
         <nav role="navigation" class="navbar navbar-default">
 
             <div class="">
-                <a href="/" class="navbar-brand">Brand</a>
+                <a href="${pageContext.request.contextPath}/" class="navbar-brand">Brand</a>
             </div>
 
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="/todo.do">Todos</a></li>
+                    <li><a href="${pageContext.request.contextPath}/todo.do">Todos</a></li>
                     <li><a href="http://www.github.com/noneedname">Github</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/login.do">Login</a></li>
+                    <li><a href="${pageContext.request.contextPath}/login.do">Login</a></li>
                 </ul>
             </div>
         </nav>
@@ -31,7 +31,7 @@
             <H1>Welcome</H1>
             <p><font color="red">${errorMessage}</font></p>
             Please Login:
-            <form action="/login.do" method="POST">
+            <form action="${pageContext.request.contextPath}/login.do" method="POST">
                 Name: <input name="name" type="text" />
                 Password: <input name="password" type="password"/> <input type="submit" value="login"/>
             </form>

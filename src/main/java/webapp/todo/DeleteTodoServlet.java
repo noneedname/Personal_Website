@@ -1,6 +1,7 @@
 package webapp.todo;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,9 +18,8 @@ public class DeleteTodoServlet extends HttpServlet {
             throws IOException, ServletException {
         String rawName = request.getParameter("deleteName");
         String rawCat = request.getParameter("deleteCategory");
-        String name = new String(rawName.getBytes("ISO-8859-1"), "UTF-8");
-        String category = new String(rawCat.getBytes("ISO-8859-1"), "UTF-8");
-        todoService.deleteTodo(new Todo(name, category));
-        response.sendRedirect("/todo.do");
+        System.out.println("name is: " + rawName + " and cat is: " + rawCat);
+        todoService.deleteTodo(new Todo(rawName, rawCat));
+        response.sendRedirect("/todo/todo.do");
     }
 }
