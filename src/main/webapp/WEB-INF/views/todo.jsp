@@ -4,7 +4,7 @@
 
 <html>
     <head>
-        <title>宝的TodoList</title>
+        <title>我已无力起名</title>
         <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
               rel="stylesheet">
     </head>
@@ -18,11 +18,11 @@
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="${pageContext.request.contextPath}/todo.do">Todos</a></li>
+                    <li><a href="${pageContext.request.contextPath}/todo">Todos</a></li>
                     <li><a href="http://www.github.com/noneedname">Github</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="${pageContext.request.contextPath}/logout.do">Logout</a></li>
+                    <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
                 </ul>
             </div>
         </nav>
@@ -42,7 +42,7 @@
                         <tr>
                             <td>${todo.name}</td>
                             <td>${todo.category}</td>
-                            <td><a class="btn btn-danger" href="${pageContext.request.contextPath}/delete-todo.do?deleteName=${todo.name}&deleteCategory=${todo.category}">Delete</a></td>
+                            <td><a class="btn btn-danger" href="${pageContext.request.contextPath}/delete-todo?deleteName=${todo.name}&deleteCategory=${todo.category}">Delete</a></td>
                         </tr>
                     </c:forEach>
                 </tbody>
@@ -50,7 +50,7 @@
 
             <br/><br/><br/>
             <H3>Add a new Item:</H3>
-            <form method="post" action="${pageContext.request.contextPath}/add-todo.do">
+            <form method="post" action="${pageContext.request.contextPath}/add-todo">
                 <fieldset class="form-group">
                     <label>Description</label> <input type="text" name="newTodo" class="form-control"/> <br/>
                 </fieldset>

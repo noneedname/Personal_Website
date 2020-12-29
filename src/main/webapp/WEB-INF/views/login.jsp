@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>宝的秘密空间</title>
+        <title>我已无力起名</title>
         <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
               rel="stylesheet">
     </head>
@@ -18,11 +18,11 @@
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="${pageContext.request.contextPath}/todo.do">Todos</a></li>
+                    <li><a href="${pageContext.request.contextPath}/todo">Todos</a></li>
                     <li><a href="http://www.github.com/noneedname">Github</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="${pageContext.request.contextPath}/login.do">Login</a></li>
+                    <li><a href="${pageContext.request.contextPath}/login">Login</a></li>
                 </ul>
             </div>
         </nav>
@@ -31,7 +31,7 @@
             <H1>Welcome</H1>
             <p><font color="red">${errorMessage}</font></p>
             Please Login:
-            <form action="${pageContext.request.contextPath}/login.do" method="POST">
+            <form action="${pageContext.request.contextPath}/login" method="POST">
                 Name: <input name="name" type="text" />
                 Password: <input name="password" type="password"/> <input type="submit" value="login"/>
             </form>

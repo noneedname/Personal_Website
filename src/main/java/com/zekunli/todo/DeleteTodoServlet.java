@@ -1,7 +1,6 @@
-package webapp.todo;
+package com.zekunli.todo;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

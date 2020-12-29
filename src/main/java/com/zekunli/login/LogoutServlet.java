@@ -1,6 +1,4 @@
-package webapp.login;
-
-import webapp.todo.TodoService;
+package com.zekunli.login;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
