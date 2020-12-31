@@ -1,49 +1,79 @@
 package com.zekunli.todo;
 
-import java.util.Objects;
+import javax.validation.constraints.Size;
+import java.util.Date;
 
 public class Todo {
-    private String name;
-    private String category;
+    private int id;
+    private String user;
+    @Size(min = 2, message = "Enter at least 2 Characters.")
+    private String desc;
+    private Date deadline;
 
-    public Todo(String name, String category) {
-        this.name = name;
-        this.category = category;
+    public Todo() {}
+
+    public Todo(int id, String user, String desc, Date deadline) {
+        super();
+        this.id = id;
+        this.user = user;
+        this.desc = desc;
+        this.deadline = deadline;
     }
 
-    public String getName() {
-        return name;
+    public int getId() {
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getCategory() {
-        return category;
+    public String getUser() {
+        return user;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setUser(String user) {
+        this.user = user;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Todo todo = (Todo) o;
-        return getName().equals(todo.getName()) && getCategory().equals(todo.getCategory());
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public Date getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(Date deadline) {
+        this.deadline = deadline;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getCategory());
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + id;
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Todo other = (Todo) obj;
+        return id == other.id;
     }
 
     @Override
     public String toString() {
-        return  "name='" + name + '\'' +
-                ", category='" + category + '\'' +
-                '}';
+        return String.format("Todo [id=%s, user=%s, desc=%s, targetDate=%s]", id, user, desc, deadline);
     }
 }

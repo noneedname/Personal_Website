@@ -1,41 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>我已无力起名</title>
-        <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
-              rel="stylesheet">
-    </head>
+<%@ include file="common/header.jspf"%>
+<%@ include file="common/nav_bar.jspf"%>
 
-    <body>
-        <nav role="navigation" class="navbar navbar-default">
+    <div class="container">
+        <H1>Welcome</H1>
+        <p><font color="red">${errorMessage}</font></p>
+        Please Login:
+        <form action="${pageContext.request.contextPath}/login" method="POST">
+            Name: <input name="name" type="text" />
+            Password: <input name="password" type="password"/> <input type="submit" value="login"/>
+        </form>
+    </div>
 
-            <div class="">
-                <a href="${pageContext.request.contextPath}/" class="navbar-brand">Brand</a>
-            </div>
+<%@include file="common/footer.jspf"%>
 
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="${pageContext.request.contextPath}/todo">Todos</a></li>
-                    <li><a href="http://www.github.com/noneedname">Github</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="${pageContext.request.contextPath}/login">Login</a></li>
-                </ul>
-            </div>
-        </nav>
-
-        <div class="container">
-            <H1>Welcome</H1>
-            <p><font color="red">${errorMessage}</font></p>
-            Please Login:
-            <form action="${pageContext.request.contextPath}/login" method="POST">
-                Name: <input name="name" type="text" />
-                Password: <input name="password" type="password"/> <input type="submit" value="login"/>
-            </form>
-        </div>
-
-    </body>
-</html>
